@@ -5,7 +5,7 @@
 ;; Author: Sébastien Gross <seb•ɑƬ•chezwam•ɖɵʈ•org>
 ;; Keywords: emacs, 
 ;; Created: 2012-08-30
-;; Last changed: 2012-08-30 22:50:31
+;; Last changed: 2012-08-30 23:02:19
 ;; Licence: WTFPL, grab your copy here: http://sam.zoy.org/wtfpl/
 
 ;; This file is NOT part of GNU Emacs.
@@ -37,8 +37,8 @@ IDENTITY is a unique symbol defining the identity.
 The remote repository location (see
 `magit-identities-get-repo-string') is match against REGEXP.
 
-LIST OF FIELD is a list suitable for
-`magit-log-edit-set-fields': (field-symbol \"content\")
+LIST OF FIELD is a list suitable cells for
+`magit-log-edit-set-fields': (field-symbol . \"content\")
 
 Order matters: first matched identity is used.")
 
