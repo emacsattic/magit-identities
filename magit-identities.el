@@ -5,7 +5,7 @@
 ;; Author: Sébastien Gross <seb•ɑƬ•chezwam•ɖɵʈ•org>
 ;; Keywords: emacs, 
 ;; Created: 2012-08-30
-;; Last changed: 2012-08-30 23:02:19
+;; Last changed: 2012-08-31 10:36:28
 ;; Licence: WTFPL, grab your copy here: http://sam.zoy.org/wtfpl/
 
 ;; This file is NOT part of GNU Emacs.
@@ -19,13 +19,12 @@
 ;;; Code:
 
 
-(eval-when-compile
-  (require 'magit)
-  (require 'cl))
+(require 'magit)
+(require 'cl)
 
 (provide 'magit-identities)
 
-(defvar magit-identities-alist nil
+(defcustom magit-identities-alist nil
   "List of all identities. Each item is a list of:
 
 \(identity
