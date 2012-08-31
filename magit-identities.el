@@ -57,8 +57,8 @@ Order matters: first matched identity is used."
   "Give REPOSITORY return a matching id from
 `magit-identities-alist'."
   (loop for p in magit-identities-alist
-	when (string-match (cadr p) repository)
 	return (caddr p)))
+	when (string-match-p regexp repository)
 
 ;;;###autoload
 (defun magit-identities-set-id()
