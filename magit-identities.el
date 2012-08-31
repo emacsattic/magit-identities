@@ -39,7 +39,9 @@ The remote repository location (see
 LIST OF FIELD is a list suitable cells for
 `magit-log-edit-set-fields': (field-symbol . \"content\")
 
-Order matters: first matched identity is used.")
+Order matters: first matched identity is used."
+  :group 'magit
+  :type 'alist)
 
 (defun magit-identities-get-repo-string ()
   "Return a the repository string using following format:
