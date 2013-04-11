@@ -5,7 +5,7 @@
 ;; Author: Sébastien Gross <seb•ɑƬ•chezwam•ɖɵʈ•org>
 ;; Keywords: emacs, 
 ;; Created: 2012-08-30
-;; Last changed: 2012-08-31 22:21:03
+;; Last changed: 2013-04-11 20:54:42
 ;; Licence: WTFPL, grab your copy here: http://sam.zoy.org/wtfpl/
 
 ;; This file is NOT part of GNU Emacs.
@@ -66,6 +66,20 @@ Order matters: first matched identity is used."
   (magit-log-edit-set-fields
    (magit-identities-get-id
     (magit-identities-get-repo-string))))
+
+;;;###autoload
+(defun magit-identities-change(id)
+  "Change identity to ID taken from `magit-identities-change'."
+    (interactive
+     (list (completing-read
+	    "Identity: "
+	    (loop for i in magit-identities-alist
+		  collect (symbol-name (car i)))
+	    nil 1 )))
+    (magit-log-edit-set-fields
+     (caddr (assoc (intern id) magit-identities-alist))))
+(define-key magit-log-edit-mode-map (kbd "C-c C-p") 'magit-identities-change)
+
 
 ;;;###autoload
 (add-hook 'magit-log-edit-mode-hook 'magit-identities-set-id)
